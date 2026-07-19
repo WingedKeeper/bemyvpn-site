@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeMyVPN — свободная P2P VPN-сеть · Поддержка и конфиденциальность</title>
+<meta name="description" content="BeMyVPN — децентрализованная P2P VPN-сеть. Поддержка и политика конфиденциальности. Support and privacy policy.">
+<style>
+  :root{
+    --bg:#0B0E14; --card:#141c2b; --line:#20293a;
+    --tx:#eef2f8; --mut:#9aa7bd; --blue:#6EA2FF; --blue2:#3D6FE0;
+    --mint:#3EE6A8; --mint2:#14B981;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--tx);
+       background:radial-gradient(1200px 700px at 15% -10%,#152036 0,transparent 60%),
+                  radial-gradient(1100px 700px at 100% 110%,#0c3a2e 0,transparent 55%),var(--bg);}
+  .wrap{max-width:780px;margin:0 auto;padding:28px 22px 64px}
+  header{display:flex;align-items:center;gap:14px;padding:22px 0 6px}
+  header .logo{width:52px;height:52px;flex:0 0 auto}
+  header h1{font-size:26px;margin:0;letter-spacing:.2px}
+  header .tag{color:var(--mut);font-size:14px;margin-top:2px}
+  .lang{margin-left:auto;display:flex;gap:6px}
+  .lang button{background:transparent;border:1px solid var(--line);color:var(--mut);
+    border-radius:999px;padding:5px 13px;font:inherit;font-size:13px;cursor:pointer}
+  .lang button.on{color:var(--tx);border-color:var(--blue);background:rgba(110,162,255,.12)}
+  .lang button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  .hero{margin:24px 0 8px;font-size:clamp(23px,5vw,33px);font-weight:700;line-height:1.25;text-wrap:balance}
+  .hero .g{background:linear-gradient(90deg,var(--blue),var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--mut);font-size:17px;max-width:62ch}
+  section{margin-top:34px;scroll-margin-top:20px}
+  h2{font-size:19px;margin:0 0 12px}
+  h3{font-size:15px;margin:18px 0 6px}
+  .card{background:linear-gradient(180deg,var(--card),#0f1622);border:1px solid var(--line);
+        border-radius:16px;padding:18px 20px}
+  .steps{display:grid;gap:12px}
+  .step{display:flex;gap:14px;align-items:flex-start}
+  .step .n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+           font-weight:700;font-size:14px;color:#08110c;background:linear-gradient(180deg,var(--mint),var(--mint2))}
+  .step:nth-child(2) .n{color:#04122e;background:linear-gradient(180deg,var(--blue),var(--blue2))}
+  .roles{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:640px){.roles{grid-template-columns:repeat(3,1fr)}}
+  .role b{display:block;margin-bottom:4px}
+  .role span{color:var(--mut);font-size:14px}
+  p{margin:0 0 12px}
+  .muted{color:var(--mut)}
+  a{color:var(--blue)}
+  ul{margin:0 0 12px;padding-left:20px}
+  li{margin:7px 0}
+  footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+  .pill{display:inline-block;font-size:12px;color:var(--mut);border:1px solid var(--line);
+        border-radius:999px;padding:3px 10px;margin-top:10px}
+  /* language switching */
+  body[data-lang="ru"] [lang="en"]{display:none}
+  body[data-lang="en"] [lang="ru"]{display:none}
+</style>
+</head>
+<body data-lang="ru">
+<div class="wrap">
+  <header>
+    <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BeMyVPN">
+      <defs>
+        <linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6EA2FF"/><stop offset="1" stop-color="#3D6FE0"/></linearGradient>
+        <linearGradient id="gG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3EE6A8"/><stop offset="1" stop-color="#14B981"/></linearGradient>
+        <mask id="lensTop"><rect width="100" height="100" fill="black"/><circle cx="37" cy="50" r="19" fill="none" stroke="white" stroke-width="11"/><rect y="50" width="100" height="50" fill="black"/></mask>
+      </defs>
+      <circle cx="63" cy="50" r="19" fill="none" stroke="url(#gG)" stroke-width="11"/>
+      <circle cx="37" cy="50" r="19" fill="none" stroke="url(#gB)" stroke-width="11"/>
+      <g mask="url(#lensTop)"><circle cx="63" cy="50" r="19" fill="none" stroke="url(#gG)" stroke-width="11"/></g>
+    </svg>
+    <div>
+      <h1>BeMyVPN</h1>
+      <div class="tag"><span lang="ru">Свободная P2P VPN-сеть</span><span lang="en">Free P2P VPN network</span></div>
+    </div>
+    <div class="lang">
+      <button type="button" data-set="ru" class="on">RU</button>
+      <button type="button" data-set="en">EN</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <span lang="ru">VPN-сеть, которую держат <span class="g">сами люди</span>.</span>
+    <span lang="en">A VPN network run by <span class="g">people themselves</span>.</span>
+  </div>
+  <p class="lead">
+    <span lang="ru">Здесь нет платных серверов и компании-посредника. Любой может поднять точку
+      выхода и помочь другим выйти в интернет, а любой другой — подключиться к свободной точке.
+      Координатор только знакомит участников и не участвует в передаче вашего трафика.</span>
+    <span lang="en">There are no paid servers and no company in the middle. Anyone can run an exit
+      point and help others get online, and anyone else can connect to a free one. The coordinator
+      only introduces peers to each other and never carries your traffic.</span>
+  </p>
+
+  <section>
+    <h2><span lang="ru">Как начать</span><span lang="en">Getting started</span></h2>
+    <div class="card steps">
+      <div class="step"><div class="n">1</div><div>
+        <b><span lang="ru">Стать точкой выхода (хост)</span><span lang="en">Become an exit point (host)</span></b><br>
+        <span class="muted"><span lang="ru">Включите раздачу — приложение выдаст код сети и QR. Права root не нужны.</span><span lang="en">Turn on sharing — the app gives you a network code and a QR. No root required.</span></span>
+      </div></div>
+      <div class="step"><div class="n">2</div><div>
+        <b><span lang="ru">Подключиться (гость)</span><span lang="en">Connect (guest)</span></b><br>
+        <span class="muted"><span lang="ru">Введите код сети или отсканируйте QR — поднимется прямое зашифрованное соединение.</span><span lang="en">Enter the network code or scan the QR — a direct encrypted connection is established.</span></span>
+      </div></div>
+      <div class="step"><div class="n">3</div><div>
+        <b><span lang="ru">Готово</span><span lang="en">Done</span></b><br>
+        <span class="muted"><span lang="ru">Трафик идёт напрямую между устройствами. Режим «Скрытный» маскирует соединение.</span><span lang="en">Traffic flows directly between devices. “Stealth” mode masks the connection.</span></span>
+      </div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span lang="ru">Три роли в одном приложении</span><span lang="en">Three roles in one app</span></h2>
+    <div class="roles">
+      <div class="card role"><b><span lang="ru">Гость</span><span lang="en">Guest</span></b>
+        <span><span lang="ru">Выходите в сеть через доступную точку по коду.</span><span lang="en">Get online through an available exit point using a code.</span></span></div>
+      <div class="card role"><b><span lang="ru">Хост</span><span lang="en">Host</span></b>
+        <span><span lang="ru">Раздаёте свой интернет другим — без root.</span><span lang="en">Share your internet with others — without root.</span></span></div>
+      <div class="card role"><b><span lang="ru">Свой сервер</span><span lang="en">Own server</span></b>
+        <span><span lang="ru">Подключаете собственную VPS.</span><span lang="en">Connect your own VPS.</span></span></div>
+    </div>
+  </section>
+
+  <section id="support">
+    <h2><span lang="ru">Поддержка</span><span lang="en">Support</span></h2>
+    <div class="card">
+      <p><span lang="ru">Вопрос, баг или предложение? Напишите — отвечаем.</span><span lang="en">A question, a bug or an idea? Write to us — we reply.</span></p>
+      <p><span lang="ru">Почта: </span><span lang="en">Email: </span><a href="mailto:support@bemyvpn.net">support@bemyvpn.net</a></p>
+      <p class="muted"><span lang="ru">Обычно отвечаем в течение 1–2 дней.</span><span lang="en">We usually reply within 1–2 days.</span></p>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <h2><span lang="ru">Политика конфиденциальности</span><span lang="en">Privacy Policy</span></h2>
+    <div class="card">
+      <p><b><span lang="ru">Коротко: содержимое вашего трафика нам недоступно, аккаунт не нужен, ваши данные мы не продаём и никому не передаём.</span><span lang="en">In short: we cannot see the contents of your traffic, no account is required, and we never sell or share your data with anyone.</span></b></p>
+
+      <h3><span lang="ru">Кто мы</span><span lang="en">Who we are</span></h3>
+      <p><span lang="ru">BeMyVPN — приложение и координационный сервис на домене bemyvpn.net. Контакт по вопросам приватности: </span><span lang="en">BeMyVPN is an application and a coordination service on the bemyvpn.net domain. Privacy contact: </span><a href="mailto:support@bemyvpn.net">support@bemyvpn.net</a>.</p>
+
+      <h3><span lang="ru">Какие данные обрабатываются</span><span lang="en">What data is processed</span></h3>
+      <ul>
+        <li><b><span lang="ru">Сетевые адреса (IP-адрес и порт).</span><span lang="en">Network addresses (IP address and port).</span></b>
+          <span lang="ru">Чтобы построить прямое соединение между двумя устройствами, координатор должен передать им сетевые адреса друг друга — без этого P2P-соединение технически невозможно. Адреса обрабатываются временно, в оперативной памяти, только на время активной сессии, и не записываются в журналы.</span>
+          <span lang="en">To establish a direct connection between two devices, the coordinator must pass their network addresses to each other — a P2P connection is technically impossible otherwise. Addresses are processed transiently, in memory, only for the duration of an active session, and are not written to logs.</span></li>
+        <li><b><span lang="ru">Код сети и статус точки выхода.</span><span lang="en">Network code and exit-point status.</span></b>
+          <span lang="ru">Пока точка активна, координатор держит в памяти её код, страну и число подключённых гостей — чтобы показать её в списке. После отключения запись пропадает.</span>
+          <span lang="en">While an exit point is active, the coordinator keeps its code, country and guest count in memory so it can be listed. The record disappears once it goes offline.</span></li>
+        <li><b><span lang="ru">Содержимое трафика — не обрабатывается.</span><span lang="en">Traffic contents — not processed.</span></b>
+          <span lang="ru">Трафик идёт напрямую между гостем и точкой выхода и защищён сквозным шифрованием (протокол Noise). Он не проходит через наши серверы, поэтому мы физически не можем его видеть, хранить или анализировать. История посещённых сайтов не собирается.</span>
+          <span lang="en">Traffic flows directly between guest and exit point and is protected by end-to-end encryption (the Noise protocol). It never passes through our servers, so we physically cannot see, store or analyse it. Browsing history is not collected.</span></li>
+        <li><b><span lang="ru">Аккаунты и личные данные — не требуются.</span><span lang="en">Accounts and personal data — not required.</span></b>
+          <span lang="ru">Регистрация не нужна. Мы не запрашиваем имя, телефон, email, платёжные данные, геолокацию, контакты или доступ к файлам.</span>
+          <span lang="en">No sign-up is needed. We do not ask for your name, phone, email, payment details, precise location, contacts or file access.</span></li>
+      </ul>
+
+      <h3><span lang="ru">Чего мы не делаем</span><span lang="en">What we never do</span></h3>
+      <ul>
+        <li><span lang="ru">Не продаём, не сдаём в аренду и не передаём ваши данные третьим лицам — ни для рекламы, ни для аналитики, ни для какой-либо иной цели.</span><span lang="en">We do not sell, rent or disclose your data to third parties — not for advertising, not for analytics, not for any other purpose.</span></li>
+        <li><span lang="ru">В приложении нет рекламных SDK, трекеров и сторонней аналитики.</span><span lang="en">The app contains no advertising SDKs, trackers or third-party analytics.</span></li>
+        <li><span lang="ru">Мы не ведём журналы трафика и не строим профили пользователей.</span><span lang="en">We keep no traffic logs and build no user profiles.</span></li>
+      </ul>
+
+      <h3><span lang="ru">Хранение и удаление</span><span lang="en">Retention and deletion</span></h3>
+      <p><span lang="ru">Перечисленные технические данные существуют только пока идёт сессия, и исчезают при отключении — отдельного «удаления аккаунта» не требуется, потому что аккаунта нет. Если у вас есть вопрос об обработке данных или запрос на удаление, напишите на </span><span lang="en">The technical data listed above exists only while a session is running and disappears when you disconnect — there is no “delete my account” step because there is no account. If you have a question about data processing or a deletion request, write to </span><a href="mailto:support@bemyvpn.net">support@bemyvpn.net</a><span lang="ru">, и мы ответим в течение 30 дней.</span><span lang="en">, and we will reply within 30 days.</span></p>
+
+      <h3><span lang="ru">Дети</span><span lang="en">Children</span></h3>
+      <p><span lang="ru">Приложение не предназначено для детей младше 13 лет, и мы намеренно не собираем данные детей.</span><span lang="en">The app is not directed at children under 13, and we do not knowingly collect data from children.</span></p>
+
+      <h3><span lang="ru">Ответственность участников сети</span><span lang="en">Responsibility of network participants</span></h3>
+      <p><span lang="ru">Точки выхода поднимают сами пользователи. Выбирая точку выхода, вы направляете свой трафик через чужое устройство — как и в любой VPN-сети, владелец выходной точки видит тот же трафик, что увидел бы ваш интернет-провайдер (при этом HTTPS-содержимое остаётся зашифрованным). Мы не контролируем чужие устройства и рекомендуем выбирать точки осознанно.</span><span lang="en">Exit points are run by users themselves. By choosing an exit point you route your traffic through someone else’s device — as in any VPN, the owner of that exit point sees the same traffic your internet provider would (HTTPS contents remain encrypted). We do not control other people’s devices and recommend choosing exit points deliberately.</span></p>
+
+      <h3><span lang="ru">Изменения политики</span><span lang="en">Changes to this policy</span></h3>
+      <p><span lang="ru">При изменении политики мы обновим текст на этой странице и дату редакции ниже.</span><span lang="en">If this policy changes, we will update the text on this page and the revision date below.</span></p>
+
+      <div class="pill"><span lang="ru">Редакция: 19 июля 2026</span><span lang="en">Last updated: 19 July 2026</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span lang="ru">© 2026 BeMyVPN · Децентрализованный P2P VPN · Ваш трафик не проходит через нас.</span>
+    <span lang="en">© 2026 BeMyVPN · Decentralised P2P VPN · Your traffic never passes through us.</span>
+  </footer>
+</div>
+<script>
+  var buttons = document.querySelectorAll('.lang button');
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var l = b.dataset.set;
+      document.body.dataset.lang = l;
+      document.documentElement.lang = l;
+      buttons.forEach(function(x){ x.classList.toggle('on', x === b); });
+    });
+  });
+  // Reviewers and non-Russian visitors land in English automatically.
+  if (!(navigator.language || '').toLowerCase().startsWith('ru')) {
+    document.querySelector('.lang button[data-set="en"]').click();
+  }
+</script>
+</body>
+</html>
